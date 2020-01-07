@@ -5,7 +5,9 @@ import re
 import time
 import numpy as np
 import pandas as pd
-
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
+from sklearn.tree import DecisionTreeClassifier
 
 max_past_day = 5
 def main(request):
@@ -46,6 +48,30 @@ def main(request):
     df = pd.DataFrame(data=result_list)
 
 
+    X= df.iloc[0:,0:3].values
+    y=df.iloc[0:,4].values
+    print
+    def check_tree(max_depth):
+        X_train, X_test, y_train, y_test = train_test_split(X,y, stratify = y,test_size =0.3,shuffle=True, random_state =10)
+        forest=RandomForestClassifier(n_estimators=1,max_depth=max_depth,class_weight="balanced")
+        forest.fit(X_train,y_train)
+        return forest, forest.predict(X_test),forest.score(X_train, y_train), forest.score(X_test, y_test),forest.feature_importances_
+
+    score_trains = {}
+    score_tests = {}
+    imp ={}
+    predictions = {}
+
+    for max_depth in range(1,20):
+        _, prediction ,score_train, score_test,importance = check_tree(max_depth)
+        score_trains[max_depth] = score_train
+        score_tests[max_depth] = score_test
+        imp[max_depth] = importance
+        predictions[max_depth] = prediction
+    test_key = max(score_tests,key=score_tests.get) 
+    resu = [score_trains[test_key],score_tests[test_key],imp[test_key],predictions[test_key],test_key]
+
+
 
 
 
@@ -56,4 +82,4 @@ def main(request):
 
     
 
-    return render(request,'result.html',{"nums":df})
+    return render(request,'result.html',{"nums":resu})
