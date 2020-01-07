@@ -1,0 +1,160 @@
+* {
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+.good{
+    cursor:pointer;
+}
+.station{
+    cursor:pointer;
+}
+.main-logo{
+    font-size:40px;
+    font-family: 'Bodoni 72',sans-serif;
+    line-height:65px;
+}
+.header-top{
+    height:65px;
+    width:95%;
+    margin:0 auto;
+}
+.header-left{
+    float:left;
+
+}
+.header-right{
+    float:right;
+
+}
+.option{
+    display:inline-block;
+    height:65px;
+    line-height:65px;
+    padding:0 20px;
+    color:black;
+
+}
+.header-bottom{
+    background-color:slategray;
+    opacity:0.9;
+    height:65px;
+
+}
+.header-bottom a:hover{
+    box-shadow: 0 4px 8px #ccc;
+}
+.header-bottom a{
+    float:left;
+    height:65px;
+    line-height:65px;
+    text-align:center;
+    padding:1px;
+    width:20%;
+    color:white;
+    box-shadow: 0 2px 5px #ccc;
+}
+.title2{
+    font-size:30px;
+    font-family: 'Bodoni 72',sans-serif;
+}
+.show-result{
+
+    height:420px;
+    border:solid thin slategray;
+    display:inline-block;
+    box-shadow: 0 2px 5px #ccc;
+    border-radius: 4px;
+    
+}
+
+.entry{
+    text-align:center;
+    border:solid thin slategray;
+    padding:10px;
+    box-shadow: 0 2px 5px #ccc;
+    border-radius: 4px;
+}
+.detail{
+    font-size:13px;
+    width:80%;
+    margin:0 auto;
+}
+.sub{
+    width:100%;
+    display:inline-block;
+    padding:5px;
+    background-color:tan;
+    color:white;
+    margin:10px 0;
+    border-radius: 4px;
+    opacity:0.9;
+}
+.sub:hover{
+    opacity:1;
+}
+
+.container{
+    margin-top:6px;
+    width:100%;
+}
+
+
+.category{
+    
+    border-radius: 3px;
+    height:80px;
+    box-shadow: 0 2px 5px #ccc;
+}
+.category:hover{
+    box-shadow: 0 4px 8px #ccc;
+
+}
+.icon-logo{
+    display:inline-block;
+    text-align:center;
+    padding-right:10px;
+    text-align:center;
+    float:right;
+    line-height:40px;
+    
+
+
+}
+.icon{
+    width:60%;
+    height:100%;
+    
+}   
+
+.clear{
+    clear:left;
+}
+.middle-wrapper{
+    margin:20px 0;
+}
+.title3{
+    font-family: 'Bodoni 72',sans-serif;
+    color:white;
+    font-size:30px;
+    float:left;
+    
+
+}
+footer{
+    height:100px;
+    background-color:slategray;
+
+}
+.footer-container{
+    width:95%;
+    margin:0 auto;
+    
+}
+.mail{
+    float:right;
+    padding-top:30px;
+    color:white;
+    cursor:pointer;
+}
